@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<SearchItem>
+  <Basic>
+    <Date>日期</Date>
+    <Time>时间</Time>
+  </Basic>
+
+  <Advance>
+    <Class1>
+      
+    </Class1>
+    <Class2>
+      
+    </Class2>
+    <Class3>
+      
+    </Class3>
+  </Advance>
+</SearchItem>

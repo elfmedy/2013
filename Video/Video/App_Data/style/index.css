@@ -1,0 +1,46 @@
+@charset "utf-8";
+/*reset*/
+html,body,dl,dd,h1,h2,h3,h4,h5,h6,p,form{margin:0;}
+fieldset,img{border:0;}
+ul,ol,blockquote{margin:0;padding:0;list-style:none;}
+/*clear*/
+.left{float:left;}
+.right{float:right;}
+.clear:after{content:".";display:block;height:0;clear:both;visibility:hidden;line-height:0;}
+.clear{zoom:1;}
+/*body*/
+body{font-size:14px;line-height:1.5;color:#333;font-family:Tahoma,Verdana,STHeiTi,simsun,sans-serif;min-width:1000px;}
+/*a*/
+a{color:#003399;text-decoration:none;}
+a:hover{text-decoration:underline;}
+/*ext*/
+
+body{background:#fbfbfb;}
+#header{height:99px;width:479px;background:url("logo.png") no-repeat 20px 10px;}
+#basicSearch h2, #extendSearch h2{height:44px;background:url("banner2.png") repeat-x 0 0;font-size:14px;font-weight:normal;line-height:44px;text-indent:20px;text-shadow:1px 1px white;}
+.searchListTable{margin:20px;}
+.searchListTableItem{margin-top:10px;margin-bottom:10px;margin-left:10px;}
+.sImage{width:60px;}
+.sImage div{width:60px;height:64px;}
+.sImage #img1{background:url("selectDate.png") no-repeat 0 0;}
+.sImage #img2{background:url("selectPos.png") no-repeat 0 0;} 
+.sImage #img3{background:url("selectPeople.png") no-repeat 0 0;} 
+.sImage #img4{background:url("selectSingle.png") no-repeat 0 0;}  
+.sImage #img5{background:url("selectMovement.png") no-repeat 0 0;}  
+.sepTime1{height:30px;}
+.sepTime2{height:50px;}
+#posCheckList label{width:100px;margin-bottom:10px;}
+
+.radioTitle{padding-bottom:5px;}
+#selectTime, #selectPos, #selectPeople, #selectSingle, #selectMovement{margin:20px 0 50px 100px;}
+#selectCheckList label{width:226px;}
+#peopleSingle, #carSingle, #othersSingle{width:250px;}
+#peopleMovement, #carMovement, #othersMovement{width:250px;}
+#peoColorRadio label, #carColorRadio label, #othersColorRadio label{margin-top:3px;margin-bottom:3px;}
+
+#selectSum{border-top:1px solid #ddd;padding:20px;padding-bottom:0;background:#eee url("sum.png") no-repeat 50% 0;}
+a#button_submit{display:block;margin:0 auto;width:73px;height:26px;background:url("button.png") no-repeat 0 0;}
+a#button_submit:hover{background:url("button.png") no-repeat -80px 0;}
+a#button_submit:active{background:url("button.png") no-repeat -161px 0;}
+
+#copy{text-align:right;font-size:12px;color:#666;padding-top:20px;padding-bottom:10px;}

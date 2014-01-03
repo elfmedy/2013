@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{CE165382-321D-47CE-B76E-0B33055B71DF}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>test</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;TPL_NOLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(Solution)AddressLib\;$(Solution)Descriptors\;$(Solution)Extraction\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDit)..\lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opencv_core243d.lib;opencv_imgproc243d.lib;opencv_highgui243d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(Solution)AddressLib\;$(Solution)Descriptors\;$(Solution)Extraction\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDit)..\lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opencv_core243.lib;opencv_imgproc243.lib;opencv_highgui243.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="address.c" />
+    <ClCompile Include="ColorLayout.cpp" />
+    <ClCompile Include="ColorLayoutExtraction.cpp" />
+    <ClCompile Include="ColorQuant.cpp" />
+    <ClCompile Include="ColorSpace.cpp" />
+    <ClCompile Include="ColorSpaceExtraction.cpp" />
+    <ClCompile Include="ColorStructure.cpp" />
+    <ClCompile Include="ColorStructureExtraction.cpp" />
+    <ClCompile Include="ContourShape.cpp" />
+    <ClCompile Include="ContourShapeExtraction.cpp" />
+    <ClCompile Include="Convert.cpp" />
+    <ClCompile Include="DominantColor.cpp" />
+    <ClCompile Include="DominantColorExtraction.cpp" />
+    <ClCompile Include="EdgeHist.cpp" />
+    <ClCompile Include="EdgeHistExtraction.cpp" />
+    <ClCompile Include="FaceRecognition.cpp" />
+    <ClCompile Include="FaceRecognitionExtraction.cpp" />
+    <ClCompile Include="Feature.cpp" />
+    <ClCompile Include="FexWrite.cpp" />
+    <ClCompile Include="Frame.cpp" />
+    <ClCompile Include="GoFGoPColorExtraction.cpp" />
+    <ClCompile Include="HomoTexture.cpp" />
+    <ClCompile Include="HomoTextureExtraction.cpp" />
+    <ClCompile Include="homo_texture_extractor.cpp" />
+    <ClCompile Include="imgutil.c" />
+    <ClCompile Include="inter.c" />
+    <ClCompile Include="intra.c" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="nhood.c" />
+    <ClCompile Include="RegionShape.cpp" />
+    <ClCompile Include="RegionShapeExtraction.cpp" />
+    <ClCompile Include="ScalableColor.cpp" />
+    <ClCompile Include="ScalableColorExtraction.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="tpl.c" />
+    <ClCompile Include="vopio.c" />
+    <ClCompile Include="win\mmap.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AddressLib\address.h" />
+    <ClInclude Include="AddressLib\inter.h" />
+    <ClInclude Include="AddressLib\intra.h" />
+    <ClInclude Include="AddressLib\momusys.h" />
+    <ClInclude Include="AddressLib\nhood.h" />
+    <ClInclude Include="AddressLib\vopio.h" />
+    <ClInclude Include="Convert.h" />
+    <ClInclude Include="Descriptors.h" />
+    <ClInclude Include="Descriptors\ColorLayout.h" />
+    <ClInclude Include="Descriptors\ColorQuant.h" />
+    <ClInclude Include="Descriptors\ColorSpace.h" />
+    <ClInclude Include="Descriptors\ColorStructure.h" />
+    <ClInclude Include="Descriptors\ContourShape.h" />
+    <ClInclude Include="Descriptors\DominantColor.h" />
+    <ClInclude Include="Descriptors\EdgeHist.h" />
+    <ClInclude Include="Descriptors\FaceRecognition.h" />
+    <ClInclude Include="Descriptors\HomoTexture.h" />
+    <ClInclude Include="Descriptors\RegionShape.h" />
+    <ClInclude Include="Descriptors\ScalableColor.h" />
+    <ClInclude Include="Extraction\ColorLayoutExtraction.h" />
+    <ClInclude Include="Extraction\ColorSpaceExtraction.h" />
+    <ClInclude Include="Extraction\ColorStructureExtraction.h" />
+    <ClInclude Include="Extraction\ContourShapeExtraction.h" />
+    <ClInclude Include="Extraction\DominantColorExtraction.h" />
+    <ClInclude Include="Extraction\EdgeHistExtraction.h" />
+    <ClInclude Include="Extraction\EigenFaceData.h" />
+    <ClInclude Include="Extraction\FaceRecognitionExtraction.h" />
+    <ClInclude Include="Extraction\GoFGoPColorExtraction.h" />
+    <ClInclude Include="Extraction\HomoTextureExtraction.h" />
+    <ClInclude Include="Extraction\homo_texture_extractor.h" />
+    <ClInclude Include="Extraction\imgutil.h" />
+    <ClInclude Include="Extraction\RegionShapeExtraction.h" />
+    <ClInclude Include="Extraction\ScalableColorExtraction.h" />
+    <ClInclude Include="Feature.h" />
+    <ClInclude Include="FexWrite.h" />
+    <ClInclude Include="Frame.h" />
+    <ClInclude Include="tpl.h" />
+    <ClInclude Include="win\mman.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

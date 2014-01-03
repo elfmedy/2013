@@ -1,0 +1,22 @@
+#ifndef _I_BACK_MODLE_
+#define _I_BACK_MODLE_
+
+//
+class BackModlePara
+{
+    int videoWidth;
+    int videoHeight;
+};
+
+
+class IBackModle
+{
+public:
+    int Init(BackModlePara *para) = 0;
+    void Process(const unsigned char *frame) = 0;
+    const unsigned char *GetBack() = 0;
+    const unsigned char *GetMask() = 0;
+    ~IBackModle() = 0;
+};
+
+#endif

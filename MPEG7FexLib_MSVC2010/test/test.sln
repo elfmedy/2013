@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test", "test.vcxproj", "{CE165382-321D-47CE-B76E-0B33055B71DF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "createData", "..\createData\createData.vcxproj", "{681203E4-E21E-42EE-9E33-673390A84FF2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE165382-321D-47CE-B76E-0B33055B71DF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CE165382-321D-47CE-B76E-0B33055B71DF}.Debug|Win32.Build.0 = Debug|Win32
+		{CE165382-321D-47CE-B76E-0B33055B71DF}.Release|Win32.ActiveCfg = Release|Win32
+		{CE165382-321D-47CE-B76E-0B33055B71DF}.Release|Win32.Build.0 = Release|Win32
+		{681203E4-E21E-42EE-9E33-673390A84FF2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{681203E4-E21E-42EE-9E33-673390A84FF2}.Debug|Win32.Build.0 = Debug|Win32
+		{681203E4-E21E-42EE-9E33-673390A84FF2}.Release|Win32.ActiveCfg = Release|Win32
+		{681203E4-E21E-42EE-9E33-673390A84FF2}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

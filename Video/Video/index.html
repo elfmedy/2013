@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+    <head>
+        <title>视频搜索系统</title>
+        <meta http-equiv="Content-Type" content="test/html;charset=utf-8" />
+        <link rel="Stylesheet" type="text/css" href="style/index.css" />
+        <link rel="Stylesheet" type="text/css" href="style/jQAllRangeSliders_css/dev.css" />
+        <link rel="stylesheet" type="text/css" href="style/jquery-ui/css/smoothness/jquery-ui-1.8.10.custom.css" />  
+        <link rel="Stylesheet" type="text/css" href="style/jquery-hcheckbox/css.css" />
+        <script type="text/javascript" src="style/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="style/jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+        <script type="text/javascript" src="style/jQAllRangeSliders-min.js"></script>
+        <script type="text/javascript" src="style/jquery-hcheckbox/jquery-hcheckbox.js"></script>
+        <script type="text/javascript">
+            //slide callback function
+            var changing = true;
+            var dateChanging = true;
+
+            var submitDateMin;
+            var submitDateMax;
+            var submitTimeMin;
+            var submitTimeMax;
+
+            $(document).ready(function() {
+                //slider
+                var now = new Date();
+                var nowYear = now.getFullYear();
+                var nowMonth = now.getMonth();
+                var nowDay = now.getDate();
+                var lastNow = new Date();
+                lastNow.setTime(now.getTime() - 7 * 24 * 3600 * 1000);
+                var lastestNow = new Date();
+                lastestNow.setTime(now.getTime() - 90 * 24 * 3600 * 1000);
+                $("#sDate").dateRangeSlider();
+                $("#sDate").dateRangeSlider({
+                    defaultValues: { min: new Date(lastestNow.getFullYear(), lastestNow.getMonth(), lastestNow.getDate()), max: new Date(nowYear, nowMonth, nowDay) },
+                    bounds: { min: new Date(lastestNow.getFullYear(), lastestNow.getMonth(), lastestNow.getDate()), max: new Date(nowYear, nowMonth, nowDay) },
+                    wheelMode: null,
+                    wheelSpeed: 8,
+                    arrows: true,
+                    valueLabels: "show",
+                    formatter: function(value) {
+                        var month = value.getMonth() + 1;
+                        var day = value.getDate();
+                        return "" + value.getFullYear() + "-" + (month < 10 ? "0" + month : month) + "-" + (day < 10 ? "0" + day : day);
+                    },
+                    durationIn: 0,
+                    durationOut: 400,
+                    delayOut: 200,
+                    range: { min: false, max: false }
+                });
+
+                $("#sTime").rangeSlider();
+                $("#sTime").rangeSlider({
+                    defaultValues: { min: 0, max: 1440 },
+                    bounds: { min: 0, max: 1440 },
+                    wheelMode: null,
+                    wheelSpeed: 8,
+                    arrows: true,
+                    valueLabels: "show",
+                    formatter: function(value) {
+                        var temp1 = Math.floor(value / 60);
+                        var temp2 = Math.floor(value % 60);
+                        var hour = temp1 < 10 ? "0" + temp1 : "" + temp1;
+                        var second = "";
+                        if (temp2 < 15) second = "00";
+                        else if (temp2 < 30) second = "15";
+                        else if (temp2 < 45) second = "30";
+                        else second = "45";
+                        return hour + ":" + second;
+                    },
+                    durationIn: 0,
+                    durationOut: 400,
+                    delayOut: 200,
+                    range: { min: false, max: false }
+                });
+
+                //checkBox
+                $('#posCheckList').hcheckbox();
+                $('#selectCheckList').hcheckbox();
+                //radio
+                $('#peoColorRadio').hradio();
+                $('#carColorRadio').hradio();
+                $('#othersColorRadio').hradio();
+
+                $('#button_submit').click(function() {
+                    submitDateMin = $('#sDate').find('.ui-rangeSlider-leftLabel').text();
+                    submitDateMax = $('#sDate').find('.ui-rangeSlider-rightLabel').text();
+                    submitTimeMin = $('#sTime').find('.ui-rangeSlider-leftLabel').text();
+                    submitTimeMax = $('#sTime').find('.ui-rangeSlider-rightLabel').text();
+                    alert("date:" + submitDateMin + " ^^ " + submitDateMax + " time:" + submitTimeMin + " ^^ " + submitTimeMax);
+
+                    var checkedValues = new Array();
+                    $('#posCheckList :checkbox').each(function() {
+                        if ($(this).is(':checked')) {
+                            checkedValues.push($(this).val());
+                        }
+                    });
+
+                    alert('data :' + checkedValues.join(','));
+                    alert($('#peoColorRadio :checked').val());
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="header"></div>
+        <div id="content">
+            <div id="basicSearch">
+                <h2>基本选项</h2>
+                <div class="searchListTable">
+                    <div class="searchListTableItem clear">
+                        <div class="sImage left">
+                            <div id="img1"></div>
+                        </div>
+                        <div id="selectTime">
+                            <div class="sepTime1"></div>
+                            <div id="sDate"></div>
+                            <div class="sepTime2"></div>
+                            <div id="sTime"></div>
+                        </div>
+                    </div>
+                    <div class="searchListTableItem clear">
+                        <div class="sImage left">
+                            <div id="img2"></div>
+                        </div>
+                        <div id="selectPos">
+                            <div id="posCheckList" class="clear">
+                                <input type="checkbox" value='1' /><label>摄像头1</label>
+                                <input type="checkbox" value='2' /><label>摄像头2</label>
+                                <input type="checkbox" value='3' /><label>摄像头3</label>
+                                <input type="checkbox" value='4' /><label>摄像头4</label>
+                                <input type="checkbox" value='5' /><label>摄像头5</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="extendSearch">
+                <h2>扩展选项</h2>
+                <div class="searchListTable">
+                    <div class="searchListTableItem clear">
+                        <div class="sImage left">
+                            <div id="img3"></div>
+                        </div>
+                        <div id="selectPeople" class="clear">
+                            <div id="selectCheckList">
+                                <input type="checkbox" value='1' /><label>人</label>
+                                <input type="checkbox" value='2' /><label>车</label>
+                                <input type="checkbox" value='3' /><label>其他</label>
+                            </div> 
+                        </div>          
+                    </div>
+                    <div class="searchListTableItem clear">
+                        <div class="sImage left">
+                            <div id="img4"></div>
+                        </div>
+                        <div id="selectSingle" class="clear">
+                            <div id="peopleSingle" class="left">
+                                <div class="radioTitle">选择颜色：</div>
+                                <div id="peoColorRadio">
+                                    <input name='peoColor' type="radio" value='11' /><label>红</label>
+                                    <input name='peoColor' type="radio" value='21' /><label>白</label>
+                                    <input name='peoColor' type="radio" value='31' /><label>黑</label>
+                                    <input name='peoColor' type="radio" value='51' /><label>其他</label>
+                                    <input name='peoColor' type="radio" value='41' /><label>未知</label>
+                                </div>
+                                <div class="radioTitle">上传图片：</div>
+                            </div>
+                            <div id="carSingle" class="left">
+                                <div class="radioTitle">选择颜色：</div>
+                                <div id="carColorRadio">
+                                    <input name='carColor' type="radio" value='11' /><label>红</label>
+                                    <input name='carColor' type="radio" value='21' /><label>白</label>
+                                    <input name='carColor' type="radio" value='31' /><label>黑</label>
+                                    <input name='carColor' type="radio" value='51' /><label>其他</label>
+                                    <input name='carColor' type="radio" value='41' /><label>未知</label>
+                                </div>
+                                <div class="radioTitle">上传图片：</div>
+                            </div>
+                            <div id="othersSingle" class="left">
+                                <div class="radioTitle">选择颜色：</div>
+                                <div id="othersColorRadio">
+                                    <input name='othersColor' type="radio" value='11' /><label>红</label>
+                                    <input name='othersColor' type="radio" value='21' /><label>白</label>
+                                    <input name='othersColor' type="radio" value='31' /><label>黑</label>
+                                    <input name='othersColor' type="radio" value='51' /><label>其他</label>
+                                    <input name='othersColor' type="radio" value='41' /><label>未知</label>
+                                </div>
+                                <div class="radioTitle">上传图片：</div>
+                            </div>  
+                        </div>          
+                    </div>                    
+                    <div class="searchListTableItem clear">
+                        <div class="sImage left">
+                            <div id="img5"></div>
+                        </div>
+                        <div id="selectMovement" class="clear">
+                            <div id="peopleMovement" class="left">
+                                人
+                            </div>
+                            <div id="carMovement" class="left">
+                                车
+                            </div>
+                            <div id="othersMovement" class="left">
+                                其他
+                            </div>  
+                        </div>     
+                    </div>
+                </div>
+            </div>
+            <div id="selectSum">
+                <div>日期时间：</div>
+                <div>选择地点：</div>
+                <div>物体类型：</div>
+                <div>个体特征：</div>
+                <div>行为特征：</div>
+                <div class="button_con">
+                    <a href="" id="button_submit"></a>
+                </div>
+                <div id="copy">&copy;中科院自动化所 2012</div>
+            </div>
+        </div>
+    </body>
+</html>

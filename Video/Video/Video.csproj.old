@@ -1,0 +1,193 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6BBABC05-13BE-42EC-80F9-33C3F13859BE}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Video</RootNamespace>
+    <AssemblyName>Video</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkSubset>Full</TargetFrameworkSubset>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions.Design, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="index.aspx" />
+    <Content Include="App_Data\searchItem.xml" />
+    <Content Include="login.aspx" />
+    <Content Include="result.aspx" />
+    <Content Include="showvideo.aspx" />
+    <Content Include="style\banner.png" />
+    <Content Include="style\banner2.png" />
+    <Content Include="style\button.png" />
+    <Content Include="style\fancybox\source\blank.gif" />
+    <Content Include="style\fancybox\source\fancybox_loading.gif" />
+    <Content Include="style\fancybox\source\fancybox_sprite.png" />
+    <Content Include="style\fancybox\source\helpers\fancybox_buttons.png" />
+    <Content Include="style\fancybox\source\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="style\fancybox\source\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="style\fancybox\source\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="style\fancybox\source\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="style\fancybox\source\jquery.fancybox.css" />
+    <Content Include="style\fancybox\source\jquery.fancybox.js" />
+    <Content Include="style\fancybox\source\jquery.fancybox.pack.js" />
+    <Content Include="style\index.css" />
+    <Content Include="style\index.js" />
+    <Content Include="style\jQAllRangeSliders-min.js" />
+    <Content Include="style\jQAllRangeSliders_css\dev.css" />
+    <Content Include="style\jQAllRangeSliders_css\icons\bar_bar.png" />
+    <Content Include="style\jQAllRangeSliders_css\icons\bar_body.png" />
+    <Content Include="style\jQAllRangeSliders_css\icons\bar_left.png" />
+    <Content Include="style\jQAllRangeSliders_css\icons\bar_middle.png" />
+    <Content Include="style\jQAllRangeSliders_css\icons\bar_right.png" />
+    <Content Include="style\jQAllRangeSliders_css\icons\label.png" />
+    <Content Include="style\jQAllRangeSliders_css\icons\resultset_next.png" />
+    <Content Include="style\jQAllRangeSliders_css\icons\resultset_previous.png" />
+    <Content Include="style\jquery-1.7.1.min.js" />
+    <Content Include="style\jquery-hcheckbox\css.css" />
+    <Content Include="style\jquery-hcheckbox\jquery-hcheckbox.js" />
+    <Content Include="style\jquery-hcheckbox\radio_no.png" />
+    <Content Include="style\jquery-hcheckbox\radio_yes.png" />
+    <Content Include="style\jquery-hcheckbox\select_no.png" />
+    <Content Include="style\jquery-hcheckbox\select_yes.png" />
+    <Content Include="style\jquery-ui\css\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="style\jquery-ui\css\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="style\jquery-ui\css\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="style\jquery-ui\css\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="style\jquery-ui\css\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="style\jquery-ui\css\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="style\jquery-ui\css\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="style\jquery-ui\css\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="style\jquery-ui\css\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="style\jquery-ui\css\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="style\jquery-ui\css\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="style\jquery-ui\css\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="style\jquery-ui\css\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="style\jquery-ui\css\smoothness\jquery-ui-1.8.10.custom.css" />
+    <Content Include="style\jquery-ui\js\jquery-ui-1.8.16.custom.min.js" />
+    <Content Include="style\jquery.filestyle.mini.js" />
+    <Content Include="style\jquery.upload-1.0.2.min.js" />
+    <Content Include="style\logo.png" />
+    <Content Include="style\page_navi\numbers_spritesheet.png" />
+    <Content Include="style\page_navi\pagenavi-css.css" />
+    <Content Include="style\preview.jpg" />
+    <Content Include="style\result.css" />
+    <Content Include="style\selectDate.png" />
+    <Content Include="style\selectMovement.png" />
+    <Content Include="style\selectPeople.png" />
+    <Content Include="style\selectPos.png" />
+    <Content Include="style\selectSingle.png" />
+    <Content Include="style\sum.png" />
+    <Content Include="uploadimage.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Code\MyFunction.cs" />
+    <Compile Include="App_Code\UploadFile.cs" />
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="result.aspx.cs">
+      <DependentUpon>result.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="result.aspx.designer.cs">
+      <DependentUpon>result.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="showvideo.aspx.cs">
+      <DependentUpon>showvideo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="showvideo.aspx.designer.cs">
+      <DependentUpon>showvideo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="uploadimage.aspx.cs">
+      <DependentUpon>uploadimage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="uploadimage.aspx.designer.cs">
+      <DependentUpon>uploadimage.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="style\images\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52672</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/Video</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
